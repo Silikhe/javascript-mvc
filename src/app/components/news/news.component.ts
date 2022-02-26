@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  styleUrls: ['./news.component.css'],
 })
 export class NewsComponent implements OnInit {
+  isShown: boolean = true;
 
-  constructor() { }
+  constructor(private ele : ElementRef) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  // let tag = ele.nativeElement.querySelector('li');
+
+  toggleShow() {
+    this.isShown = !this.isShown;
+    
+  // if (myTag.classList.contains('text-truncate-container')) {
+  //   myTag.classList.add('none');
+  // }
   }
-
 }

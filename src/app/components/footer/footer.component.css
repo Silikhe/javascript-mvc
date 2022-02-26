@@ -68,11 +68,11 @@ input[type="email"] {
   margin-top: 0.3125rem  !important;
 }
 input[type="submit"] {
-  background-color: #00d188;
+  background-color: #57CBC8;
   color: #fff;
   cursor: pointer;
   border: 0;
-  padding: 0.425rem 0.9375rem !important;
+  padding: 0.7025rem 0.9375rem !important;
   margin-top: 0.3125rem;
 }
 /* Footer social */
@@ -106,4 +106,17 @@ input[type="submit"] {
 /* one before the last child */
 .ft-legal-list li:nth-last-child(2) {
     flex: 1;
+}
+
+
+.btn{
+  background: #57CBC8  !important;
+  color: #fff !important;
+  cursor: pointer;
+  border: none !important;
+  font-size: 13px;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  padding: 0.625rem 0.9375rem;
+  margin-top: 0.3125rem;
 }
