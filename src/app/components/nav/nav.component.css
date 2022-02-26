@@ -1,187 +1,150 @@
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines {
-  display: none;
+.header-area {
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+  url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+  background-position: center center;
+  background-size: cover;
 }
+/* default css end */
 
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: auto;
+
+/* navbar regular css start */
+.navbar-area {
+  background: rgba(0,0,0,.6);
+  border-bottom: 1px solid #000;
 }
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  background: #24252a;
-  color: #fff;
-}
-
-.navbar-container {
+.site-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
 }
-
-.menu-items {
-  order: 2;
-  display: flex;
-}
-.logo {
-  order: 1;
-  font-size: 1.8rem;
-}
-
-.menu-items li,
-button {
-  list-style: none;
-  margin-left: 1.5rem;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-}
-
-.navbar a {
+a.site-logo {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
 }
+.site-navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.site-navbar ul li a {
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-navbar ul li a:hover {
+  background: rgba(255,255,255,.1);
+}
+/* navbar regular css end */
 
-button {
-  padding: 8px 19px;
-  margin-right: 20px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
-  border-radius: 50px;
+
+/* nav-toggler css start */
+.nav-toggler {
+  border: 3px solid #fff;
+  padding: 5px;
+  background-color: transparent;
   cursor: pointer;
-  transition: all ease-in-out 0s;
+  height: 39px;
+  display: none;
 }
-
-button:hover a {
-  color: #0088a9;
+.nav-toggler span, 
+.nav-toggler span:before, 
+.nav-toggler span:after {
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  transition: .3s;
 }
-
-button:hover {
-  background: #fff;
-  color: #0088a9;
+.nav-toggler span:before {
+  content: '';
+  transform: translateY(-9px);
 }
-
-.navbar a:hover {
-  color: #0088a9;
+.nav-toggler span:after {
+  content: '';
+  transform: translateY(6px);
 }
+.nav-toggler.toggler-open span {
+  background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+  transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+  transform: translateY(-3px) rotate(-45deg);
+}
+/* nav-toggler css start */
 
-@media (max-width: 768px) {
-  .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines {
+
+/* intro-area css start */
+.intro-area {
+  height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  color: #fff;
+}
+.intro-area h2 {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.intro-area p {
+  font-size: 18px;
+}
+/* intro-area css end */
+
+
+/* mobile breakpoint start */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 720px;
+  }
+  /* navbar css for mobile start */
+  .nav-toggler{
     display: block;
   }
-
-  .navbar-container {
-    display: block;
-    position: relative;
-    height: 64px;
+  .site-navbar {
+    min-height: 60px;
   }
-
-  .navbar-container input[type="checkbox"] {
+  .site-navbar ul {
     position: absolute;
-    display: block;
-    height: 32px;
-    width: 30px;
-    top: 20px;
-    left: 20px;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .navbar-container .hamburger-lines {
-    display: block;
-    height: 28px;
-    width: 35px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-container .hamburger-lines .line {
-    display: block;
-    height: 4px;
     width: 100%;
-    border-radius: 10px;
-    background: #fff;
-  }
-
-  .navbar-container .hamburger-lines .line1 {
-    transform-origin: 0% 0%;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line2 {
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .navbar-container .hamburger-lines .line3 {
-    transform-origin: 0% 100%;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .navbar .menu-items {
-    padding-top: 100px;
-    background: #24252a;
-    height: 100vh;
-    max-width: 300px;
-    transform: translate(-150%);
-    display: flex;
+    height: calc(100vh - 60px);
+    left: 0;
+    top: 60px;
     flex-direction: column;
-    margin-left: -40px;
-    padding-left: 40px;
-    transition: transform 0.5s ease-in-out;
-    overflow: scroll;
+    align-items: center;
+    border-top: 1px solid #444;
+    background-color: rgba(0,0,0,.75);
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
   }
-
-  .navbar .menu-items li {
-    margin-bottom: 1.8rem;
-    font-size: 1rem;
-    font-weight: 500;
+  .site-navbar ul li {
+    width: 100%;
+    text-align: center;
   }
-
-  button {
-    width: fit-content;
-    margin-left: 1rem;
+  .site-navbar ul li a {
+    padding: 25px;
   }
-
-  .logo {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    font-size: 1.7rem;
+  .site-navbar ul li a:hover {
+    background-color: rgba(255,255,255,.1);
   }
-
-  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
-    transform: translateX(0);
+  .site-navbar ul.open {
+    max-height: 100vh;
+    overflow: visible;
   }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-    transform: rotate(45deg);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
-  }
-
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-    transform: rotate(-45deg);
-  }
+  .intro-area h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }  
+  /* navbar css for mobile end */
 }
-
-@media (max-width: 500px) {
-  .navbar-container input[type="checkbox"]:checked ~ .logo {
-    display: none;
-  }
-}
+/* mobile breakpoint end */
