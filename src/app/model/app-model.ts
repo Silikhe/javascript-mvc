@@ -3,5 +3,4 @@ export class NewsModel {
   description: string = '';
   type: string = '';
   author: string = '';
-  id: number = 0;
 } 

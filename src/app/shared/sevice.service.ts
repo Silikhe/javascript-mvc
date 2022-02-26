@@ -9,7 +9,14 @@ import { map } from 'rxjs/operators';
 export class SeviceService {
   baer_url = 'https://news-portal-silikhe.herokuapp.com';
 
-  constructor(private http : HttpClient) {}
+  constructor(private http: HttpClient) {}
+  // const httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type':  'application/json',
+  //     Authorization: 'my-auth-token'
+  //   })
+  // };
+  
 
   // getUsers() {
 
@@ -21,14 +28,27 @@ export class SeviceService {
   // }
 
   postNews(data: any) {
-    console.log(data)
-    return this.http.post<any>(`${this.baer_url}/news/new`, data).pipe(map((res) => res));
+    console.log(data);
+    return this.http
+      .post<any>(`${this.baer_url}/news`, data)
+      .pipe(map((res) => res));
   }
 
-  getNew(){
-    return this.http.get<any>(`${this.baer_url}/news`).pipe(map((res) => {
-      console.log(res)
-      return res
-    }));
+  getNews() {
+    return this.http.get<any>(`${this.baer_url}/news`).pipe(
+      map((res) => {
+        console.log(res);
+        return res;
+      })
+    );
+  }
+
+  getUsers() {
+    return this.http.get<any>(`${this.baer_url}/users`).pipe(
+      map((res) => {
+        console.log(res);
+        return res;
+      })
+    );
   }
 }
