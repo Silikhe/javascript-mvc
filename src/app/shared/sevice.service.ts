@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { environment } from 'environments/environment';
+// import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { environment } from 'environments/environment';
 export class SeviceService {
   baer_url = 'https://news-portal-silikhe.herokuapp.com';
 
-  constructor(http: HttpClient) {}
+  constructor(private http : HttpClient) {}
 
   // getUsers() {
 
@@ -21,6 +21,14 @@ export class SeviceService {
   // }
 
   postNews(data: any) {
-    return this.http.post<any>(`${baseUrl}/news/new`).pipe(map((res) => res));
+    console.log(data)
+    return this.http.post<any>(`${this.baer_url}/news/new`, data).pipe(map((res) => res));
+  }
+
+  getNew(){
+    return this.http.get<any>(`${this.baer_url}/news`).pipe(map((res) => {
+      console.log(res)
+      return res
+    }));
   }
 }
