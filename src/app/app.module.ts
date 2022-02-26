@@ -9,10 +9,11 @@ import { NavComponent } from './components/nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsComponent } from './components/news/news.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavComponent, NewsComponent],
+  declarations: [AppComponent, UsersComponent, NavComponent, NewsComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

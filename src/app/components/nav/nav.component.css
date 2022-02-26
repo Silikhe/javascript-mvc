@@ -145,6 +145,15 @@ a.site-logo {
     font-size: 36px;
     margin-bottom: 15px;
   }  
-  /* navbar css for mobile end */
 }
-/* mobile breakpoint end */
+.btn{
+  background: #00d188 !important;
+  color: #fff !important;
+  cursor: pointer;
+  border: none !important;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.625rem 0.9375rem;
+  margin-top: 0.3125rem;
+}

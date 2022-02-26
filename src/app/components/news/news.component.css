@@ -83,7 +83,7 @@
 .desc {
   position: relative;
   background: #fff;
-  padding: 6% 6% 6% 10%;
+  padding: 3% 6% 3% 10%;
 }
 .desc .type {
   display: block;
@@ -130,4 +130,12 @@
 }
 .share a i, .share a:hover {
   color: #57CBC8;
+}
+
+
+.text-truncate-container {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
