@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SeviceService {
-  baer_url = 'https://news-portal-silikhe.herokuapp.com';
+  baer_url = ;
 
   constructor(private http: HttpClient) {}
   // const httpOptions = {
