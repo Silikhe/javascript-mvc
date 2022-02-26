@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'environments/environment'
+import { map } from 'rxjs/operators';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SeviceService {
-  baer_url = 'https://news-portal-silikhe.herokuapp.com'
+  baer_url = 'https://news-portal-silikhe.herokuapp.com';
 
   constructor(http: HttpClient) {}
 
@@ -19,8 +20,7 @@ export class SeviceService {
   //   });
   // }
 
-
-  postNews(data : any){
-    return this.http.post<any>(`${baseUrl}/new`)
+  postNews(data: any) {
+    return this.http.post<any>(`${baseUrl}/news/new`).pipe(map((res) => res));
   }
 }
