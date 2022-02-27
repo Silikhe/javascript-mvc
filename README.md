@@ -1,27 +1,37 @@
-# Mvc
+# Angular Application With MVC Archtecture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+An Angularapplication that perform CRUD operations. It is built with the clean architecture principles in mind while following the MVC repository pattern and powered by Architecture Components.
 
-## Development server
+## Table of Contents
+- [Architecture](#architecture)
+- [Libraries](#libraries)
+- [Demo](#demo)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Architecture
+For better abstration, we split the application into three layers spread across two distinct modules. This ensures robustness and makes our app extensible. The two modules are:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- :Model
+- :View
+- :Controller
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The :app modules contains the UI layer while the :core module contains the domain and the data layer. This three layered architecture is inspired by the [Clean Architecture design pattern](https://angular.io/)
 
-## Running unit tests
+### :app module
+The app module holds the `framework` and the `presentation` packages. The `framework` package holds non-core-ui implementations while the `presentation` layer is dedicated to core UI implementations.
+#### presentation
+The presentation layer use `ViewModel` to manage application state and `data-binding` to hook ViewModels to reactive views.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### :core module
+The core module holds the domain and data layers.
+#### Domain Layer
+The `domain layer` defines data classes that are used to bridge the data needs of the data and presentation layer. It also defines the `UseCases` that the presentation layer reuses for various accessibility and manipulation of the data.
+#### Data Layer
+The `data layer` holds the the data entity that implements our core business needs. It uses distinct `datasources` abstracted away by a repository to ensures a single channel for accessing and manipulation of the data. 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Demo
+[Link to Demo App](https://silikhe.github.io/mvc-application/)
+## TODO
+- Implement Login and Signup
+- Remove all bugs
