@@ -12,35 +12,35 @@ export class NavComponent implements OnInit {
 
   formValue !: FormGroup;
   newsObject : NewsModel = new NewsModel();
+  display = "none";
+
 
   constructor(private formBuilder : FormBuilder, private apiSer : SeviceService ) {
    }
 
   ngOnInit(): void {
-    this.apiSer.newsRequest()
+    // this.apiSer.newsRequest()
     this.formValue = this.formBuilder.group({
-      title :  [''],
+      name :  [''],
       description: [''],
-      type:  [''],
-      author:  ['']
+      imageUrl:  ['']
     })
   }
 
   postNewsData(){
-        // this.apiSer.getNews()
-
-    this.newsObject.title = this.formValue.value;
-    this.newsObject.description = this.formValue.value;
-    this.newsObject.type = this.formValue.value;
-    this.newsObject.author = this.formValue.value;
-
-    // this.apiSer.postNews(this.newsObject).subscribe(response =>{
-    //   console.log(response)
-    //   console.log("New added Succesfully")
-    // }, err =>{
-    //   console.log("Something went wrong")
-    // })
+       
+    this.apiSer.postRequest(this.formValue.value).subscribe({
+      next:(res)=>{
+        alert("added Sucessfully")
+      }
+    })
   }
 
+  openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
+  }
   
 }

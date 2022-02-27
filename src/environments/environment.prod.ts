@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  baseUrl: 'https://some-awe-places.herokuapp.com/api/v1/places',
+  production: true,
 };

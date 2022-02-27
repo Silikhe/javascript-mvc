@@ -1,15 +1,17 @@
 .header-area {
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
-  url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url(https://i.imgur.com/Oy4gzyy.jpg);
   background-position: center center;
   background-size: cover;
 }
 /* default css end */
-
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+}
 
 /* navbar regular css start */
 .navbar-area {
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid #000;
 }
 .site-navbar {
@@ -38,10 +40,9 @@ a.site-logo {
   text-transform: uppercase;
 }
 .site-navbar ul li a:hover {
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 /* navbar regular css end */
-
 
 /* nav-toggler css start */
 .nav-toggler {
@@ -52,21 +53,21 @@ a.site-logo {
   height: 39px;
   display: none;
 }
-.nav-toggler span, 
-.nav-toggler span:before, 
+.nav-toggler span,
+.nav-toggler span:before,
 .nav-toggler span:after {
   width: 28px;
   height: 3px;
   background-color: #fff;
   display: block;
-  transition: .3s;
+  transition: 0.3s;
 }
 .nav-toggler span:before {
-  content: '';
+  content: "";
   transform: translateY(-9px);
 }
 .nav-toggler span:after {
-  content: '';
+  content: "";
   transform: translateY(6px);
 }
 .nav-toggler.toggler-open span {
@@ -79,7 +80,6 @@ a.site-logo {
   transform: translateY(-3px) rotate(-45deg);
 }
 /* nav-toggler css start */
-
 
 /* intro-area css start */
 .intro-area {
@@ -113,11 +113,11 @@ a.site-logo {
 
 /* mobile breakpoint start */
 @media screen and (max-width: 767px) {
-  .container {
+  /* .container {
     max-width: 720px;
-  }
+  } */
   /* navbar css for mobile start */
-  .nav-toggler{
+  .nav-toggler {
     display: block;
   }
   .site-navbar {
@@ -132,10 +132,10 @@ a.site-logo {
     flex-direction: column;
     align-items: center;
     border-top: 1px solid #444;
-    background-color: rgba(0,0,0,.75);
+    background-color: rgba(0, 0, 0, 0.75);
     max-height: 0;
     overflow: hidden;
-    transition: .3s;
+    transition: 0.3s;
   }
   .site-navbar ul li {
     width: 100%;
@@ -145,7 +145,7 @@ a.site-logo {
     padding: 25px;
   }
   .site-navbar ul li a:hover {
-    background-color: rgba(255,255,255,.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
   .site-navbar ul.open {
     max-height: 100vh;
@@ -154,5 +154,21 @@ a.site-logo {
   .intro-area h2 {
     font-size: 36px;
     margin-bottom: 15px;
-  }  
+  }
 }
+
+
+/* Form */
+
+/* input[type=text] {
+  width: 100% !important;
+  padding: 12px 20px !important;
+  margin: 8px 0 !important;
+  box-sizing: border-box;
+} */
+
+/* input[type="text"] {
+  border: 0  !important;
+  padding: 0px  !important;
+  margin-top: 0.3125rem  !important;
+} */

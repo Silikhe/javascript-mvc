@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsComponent } from './components/news/news.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     // MatDialogModule,
     BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

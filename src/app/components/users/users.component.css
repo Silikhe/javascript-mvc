@@ -18,6 +18,13 @@
   margin-bottom: 0;
 }
 
+.menu {
+  background: #fff;
+  height: 60px;
+  line-height: 60px;
+  font-size: 12pt;
+}
+
 /* Pagination */
 .pager {
   margin-bottom: 60px;

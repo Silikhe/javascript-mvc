@@ -1,6 +1,5 @@
 export class NewsModel {
-  title : string = '';
+  name : string = '';
   description: string = '';
-  type: string = '';
-  author: string = '';
+  imageUrl: string = '';
 } 
