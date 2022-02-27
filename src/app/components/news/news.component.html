@@ -1,0 +1,45 @@
+<div class="containe">
+
+  <div class="content col-sm-12 col-sm-offset-1 mb-3 " *ngFor="let post of news">
+    <div class="image">
+      <span>NEW</span>
+      <img src="{{post.url}}" alt="" />
+    </div>
+    <div class="desc">
+      <span class="type">
+        <i class="fa fa-file-text"></i>
+      </span>
+
+      <h1>{{post.name}}</h1>
+      <p class="text-truncate-container">{{post.description}}</p>
+      <p *ngIf="isShown"> <a (click)="toggleShow()">Read more</a></p>
+
+      <img src="{{post.url}}" alt="">
+      <div class="my-2">
+        <!-- <small> -->
+        <a href="#" class="text-primary">#election</a>
+        <!-- </small> -->
+      </div>
+      <div class="share">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa fa-share-square-o"></i> 569 Shares
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-eye"></i> 3,152 Views
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-comment"></i> 0 Comments
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</div>
