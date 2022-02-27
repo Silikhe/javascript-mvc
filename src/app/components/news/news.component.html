@@ -1,6 +1,6 @@
-<div class="container">
+<div *ngIf="news" class="container">
 
-  <div class="contet col-sm-12 col-sm-offset-1 mb-3 ">
+  <div  class="contet col-sm-12 col-sm-offset-1 mb-3 ">
     <div class="image">
       <span>NEW</span>
       <!-- <img src="http://lorempixel.com/615/300/city/9/" alt="" /> -->
@@ -10,7 +10,7 @@
         <i class="fa fa-file-text"></i>
       </span>
 
-      <h1>What is Lorem Ipsum?</h1>
+      <h1>{{news.name}}</h1>
       <p class="text-truncate-container">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe eveniet hic
         eaque neque explicabo architecto
         rerum porro cupiditate dignissimos ipsum dolor sit amet, consectetur adipisicing elit. Saepe eveniet hic eaque

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup } from '@angular/forms'
-import { SeviceService } from '../../shared/sevice.service'
+import { SeviceService } from '../../model/shared/sevice.service'
 import { NewsModel } from '../../model/app-model'
 
 @Component({
@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.apiSer.getNews()
+    this.apiSer.newsRequest()
     this.formValue = this.formBuilder.group({
       title :  [''],
       description: [''],
@@ -26,21 +26,21 @@ export class NavComponent implements OnInit {
     })
   }
 
-  postNewsData(){
-        this.apiSer.getNews()
+  // postNewsData(){
+  //       this.apiSer.getNews()
 
-    this.newsObject.title = this.formValue.value;
-    this.newsObject.description = this.formValue.value;
-    this.newsObject.type = this.formValue.value;
-    this.newsObject.author = this.formValue.value;
+  //   this.newsObject.title = this.formValue.value;
+  //   this.newsObject.description = this.formValue.value;
+  //   this.newsObject.type = this.formValue.value;
+  //   this.newsObject.author = this.formValue.value;
 
-    this.apiSer.postNews(this.newsObject).subscribe(response =>{
-      console.log(response)
-      console.log("New added Succesfully")
-    }, err =>{
-      console.log("Something went wrong")
-    })
-  }
+  //   this.apiSer.postNews(this.newsObject).subscribe(response =>{
+  //     console.log(response)
+  //     console.log("New added Succesfully")
+  //   }, err =>{
+  //     console.log("Something went wrong")
+  //   })
+  // }
 
   
 }

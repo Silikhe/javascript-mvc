@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { SeviceService } from '../../shared/sevice.service'
+import { SeviceService } from '../../model/shared/sevice.service'
 
 @Component({
   selector: 'app-news',
@@ -7,12 +7,16 @@ import { SeviceService } from '../../shared/sevice.service'
   styleUrls: ['./news.component.css'],
 })
 export class NewsComponent implements OnInit {
+
+  news: any = [];
   isShown: boolean = true;
 
   constructor(private ele : ElementRef, private apiSer : SeviceService ) {}
 
   ngOnInit(): void {
-    this.getNews()
+    this.apiSer.newsRequest().then(data =>{
+      this.news = data;
+    })
   }
 
   // let tag = ele.nativeElement.querySelector('li');
@@ -26,9 +30,9 @@ export class NewsComponent implements OnInit {
   // }
   }
 
-  getNews(){
-    this.apiSer.getNews().subscribe(response =>{
-      console.log(response.response)
-    })
-  }
+  // getNews(){
+  //   this.apiSer.getNews().subscribe(response =>{
+  //     console.log(response.response)
+  //   })
+  // }
 }
