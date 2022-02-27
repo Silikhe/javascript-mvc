@@ -26,21 +26,21 @@ export class NavComponent implements OnInit {
     })
   }
 
-  // postNewsData(){
-  //       this.apiSer.getNews()
+  postNewsData(){
+        // this.apiSer.getNews()
 
-  //   this.newsObject.title = this.formValue.value;
-  //   this.newsObject.description = this.formValue.value;
-  //   this.newsObject.type = this.formValue.value;
-  //   this.newsObject.author = this.formValue.value;
+    this.newsObject.title = this.formValue.value;
+    this.newsObject.description = this.formValue.value;
+    this.newsObject.type = this.formValue.value;
+    this.newsObject.author = this.formValue.value;
 
-  //   this.apiSer.postNews(this.newsObject).subscribe(response =>{
-  //     console.log(response)
-  //     console.log("New added Succesfully")
-  //   }, err =>{
-  //     console.log("Something went wrong")
-  //   })
-  // }
+    // this.apiSer.postNews(this.newsObject).subscribe(response =>{
+    //   console.log(response)
+    //   console.log("New added Succesfully")
+    // }, err =>{
+    //   console.log("Something went wrong")
+    // })
+  }
 
   
 }
