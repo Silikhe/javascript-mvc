@@ -39,26 +39,29 @@ export class SeviceService {
     return promise;
   }
 
-  // postRequest() {
-  //   interface apiRespose {
-  //     name: string;
-  //     description: string;
-  //     imageUrl: string;
-  //   }
-  //   let promise = new Promise((resolve, reject) => {
-  //     this.http
-  //       .post<apiRespose>(environment.baseUrl, news)
-  //       .toPromise()
-  //       .then((response) => {
-  //         // this.news.name = response.name;
-  //         resolve(response);
-  //         console.log(response);
-  //       }).catch(e => {
-  //         reject(e)
-  //         console.log(e)
-  //       });
-  //   });
+  postRequest(data:any) {
+    interface apiRespose {
+      name: string;
+      description: string;
+      imageUrl: string;
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http
+        .post<any>(environment.baseUrl, data)
+        .toPromise()
+        .then((response) => {
+          // this.news.name = response.name;
+          resolve(response);
+          console.log(response);
+        }).catch(e => {
+          reject(e)
+          console.log(e)
+        });
+    });
 
-  //   return promise;
-  // }
+    return promise;
+  }
+
+
+  
 }
