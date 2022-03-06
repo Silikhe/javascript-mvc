@@ -1,6 +1,6 @@
 <div class="containe">
 
-  <div class="content col-sm-12 col-sm-offset-1 mb-3 " *ngFor="let post of news">
+  <div class="content col-sm-12 col-sm-offset-1 mb-3 " *ngFor="let post of news; index as i">
     <div class="image">
       <span>NEW</span>
       <!-- <i class="fa fa-user  "></i>
@@ -9,17 +9,17 @@
     </div>
     <div class="desc">
       <span class="type">
-        <i class="fa fa-archive"></i>            </span>
+        <i class="fa fa-archive"></i> </span>
 
       <h1>{{post.name}}</h1>
-      <p class="text-truncate-container">{{post.description}}</p>
+      <p class="text-truncate-container" id="text">{{post.description}}</p>
       <p *ngIf="isShown"> <a (click)="toggleShow()">Read more</a></p>
       <i class="fa fa-book"></i>
 
       <!-- <img src="{{post.url}}" alt=""> -->
       <div class="my-2">
         <!-- <small> -->
-        <a href="#" class="text-primary">#election</a>
+        <a href="#" class="text-primary">#{{post.url}}</a>
         <!-- </small> -->
       </div>
       <div class="share">
@@ -43,5 +43,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>

@@ -36,6 +36,7 @@ export class NavComponent implements OnInit {
     })
   }
 
+
   openModal() {
     this.display = "block";
   }

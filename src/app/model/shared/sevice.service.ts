@@ -27,42 +27,47 @@ export class SeviceService {
         .get<apiRespose>(environment.baseUrl)
         .toPromise()
         .then((response) => {
-          // this.news.name = response.name;
           resolve(response);
           console.log(response);
-        }).catch(e => {
-          reject(e)
-          console.log(e)
+        })
+        .catch((e) => {
+          reject(e);
+          console.log(e);
         });
     });
 
     return promise;
   }
 
-  // postRequest(data:any) {
-   
-  //   let promise = new Promise((resolve, reject) => {
-  //     this.http
-  //       .post<any>(environment.baseUrl, data)
-  //       .toPromise()
-  //       .then((response) => {
-  //         // this.news.name = response.name;
-  //         resolve(response);
-  //         console.log(response);
-  //       }).catch(e => {
-  //         reject(e)
-  //         console.log(e)
-  //       });
-  //   });
-
-  //   return promise;
-  // }
-
-  postRequest(data:any) {
-    return this.http.post<any>(environment.baseUrl, data)
+  postRequest(data: any) {
+    return this.http.post<any>(environment.baseUrl, data);
   }
 
+  deleteRequest(id: any) {
+    console.log(`${environment.baseUrl}/${id}`)
+    return this.http.delete<any>(`${environment.baseUrl}/${id}`);
+  }
 
+  delete(id: number) {
+    interface apiRespose {
+      name: string;
+      description: string;
+      imageUrl: string;
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http
+        .get<apiRespose>(`${environment.baseUrl}/${id}`)
+        .toPromise()
+        .then((response) => {
+          resolve(response);
+          console.log(response);
+        })
+        .catch((e) => {
+          reject(e);
+          console.log(e);
+        });
+    });
 
-  
+    return promise;
+  }
 }

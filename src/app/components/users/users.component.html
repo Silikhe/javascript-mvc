@@ -4,10 +4,10 @@
     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean
       lacinia bibendum nulla sed consectetur.</p>
   </div>
-  <div class="">
+  <div class="side">
     <div class="blog-sidebar sidebar-module">
-      <h2>What's Hot</h2>
-      <ul *ngFor="let post of news">
+      <h2 class="text-center">What's Hot</h2>
+      <ul *ngFor="let post of news; index as i">
         <li>
           <div class="row">
             <div class="col-10">
@@ -16,7 +16,9 @@
               </a>
             </div>
             <div class="col-2">
-              <i class="fa fa-trash" aria-hidden="true"></i>
+              <a class="btn p-1" (click)="deleteNewsData(post.id)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
               <!-- <i class="fa fa-user-circle-o" aria-hidden="true"></i> -->
             </div>
           </div>

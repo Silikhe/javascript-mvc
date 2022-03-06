@@ -11,7 +11,10 @@ export class NewsComponent implements OnInit {
   news: any = [];
   isShown: boolean = true;
 
-  constructor(private ele : ElementRef, private apiSer : SeviceService ) {}
+  constructor(private ele : ElementRef, private apiSer : SeviceService ) {
+    // let tag = ele.nativeElement.querySelector('#text');
+
+  }
 
   ngOnInit(): void {
     this.apiSer.newsRequest().then(data =>{
@@ -19,20 +22,21 @@ export class NewsComponent implements OnInit {
     })
   }
 
-  // let tag = ele.nativeElement.querySelector('li');
+  deleteNewsData(id: any){
+    this.apiSer.deleteRequest(id).subscribe({
+      next:(res)=>{
+        this.news.slice(id, 1);
 
-  toggleShow() {
-
-    this.isShown = !this.isShown;
-    
-  // if (myTag.classList.contains('text-truncate-container')) {
-  //   myTag.classList.add('none');
-  // }
+        alert("Deleted Sucessfully")
+      }
+    })
   }
 
-  // getNews(){
-  //   this.apiSer.getNews().subscribe(response =>{
-  //     console.log(response.response)
-  //   })
-  // }
+
+  toggleShow() {
+    this.isShown = !this.isShown;
+    
+  }
+
+  
 }
