@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="formValue" class="normal-forms">
+  <div class="text-center mb-3">
+    <mat-card-title>Create a Post</mat-card-title>
+  </div>
+  <mat-card>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="News Title..." formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Blog descreption</mat-label>
+      <textarea matInput placeholder="Write a blog..." formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Author</mat-label>
+      <input matInput placeholder="Blog author..." formControlName="imageUrl">
+    </mat-form-field>
+  </mat-card>
+  <div class="m-3">
+    <button type="submit" value="Submit" class="btn " (click)="postNewsData()">Add A Post</button>
+    <div class="float-right icon" (click)="onClear()">
+      <i class="fa fa-trash-alt"></i>
+    </div>
+  </div>
+  <div class="container mt-5" *ngIf="div">
+    <p class="mb-3">Creating a Post</p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</form>

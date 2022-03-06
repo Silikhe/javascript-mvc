@@ -109,14 +109,3 @@ input[type="submit"] {
 }
 
 
-.btn{
-  background: #57CBC8  !important;
-  color: #fff !important;
-  cursor: pointer;
-  border: none !important;
-  font-size: 13px;
-  /* font-weight: bold; */
-  text-transform: uppercase;
-  padding: 0.625rem 0.9375rem;
-  margin-top: 0.3125rem;
-}

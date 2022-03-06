@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SeviceService } from '../../model/shared/sevice.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,7 @@ import { SeviceService } from '../../model/shared/sevice.service';
 export class UsersComponent implements OnInit {
   news: any = [];
 
-  constructor(private apiSer: SeviceService) {}
+  constructor(private apiSer: SeviceService, private snackbar: MatSnackBar ) {}
 
   ngOnInit(): void {
     this.apiSer.newsRequest().then((data) => {
@@ -22,15 +23,15 @@ export class UsersComponent implements OnInit {
       next:(res)=>{
 
         this.news.slice(id, 1);
+        this.snackbar.open('Deleted Sucessfully', 'Ok', {
+          duration: 2000
+        });
 
-        alert("Deleted Sucessfully")
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
       }
     })
-    // this.apiSer.delete(id).then((data) => {
-    //   this.news.slice(id, 1);
-    //   alert('Deleted Sucessfully');
-    //   console.log(data);
-    //   // this.news = data;
-    // });
+  
   }
 }

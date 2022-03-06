@@ -16,7 +16,7 @@
         </ul>
 
         <ul>
-          <button type="button" class="btn" (click)="openModal()">
+          <button type="button" class="btn" (click)="openDialog()">
             Add A Blog
           </button>
         </ul>
@@ -27,133 +27,21 @@
         </button>
       </nav>
     </div>
-  </div> <!-- navbar-area end -->
+  </div>
+  <!-- navbar-area end -->
 
   <div class="intro-area">
     <div class="container">
-      <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Model Title</h4>
-              <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                  aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-              <p>Model body text</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Model Title</h4>
-              <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-                  aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-              <form [formGroup]="formValue">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Title</label>
-                  <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Blog Title">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Description</label>
-                  <input type="text" formControlName="description" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Blog Description">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Author</label>
-                  <input type="text" formControlName="imageUrl" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Author">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Close</button>
-                  <button type="button" class="btn btn-primary" (click)="postNewsData()">Save changes</button>
-                </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
       <div class="row mt-4">
         <div class="col-md-4">
           <app-users></app-users>
-
         </div>
         <div class="col-md-8">
           <app-news></app-news>
-
         </div>
       </div>
 
     </div>
   </div>
 </header>
-<!-- <div class="container">
-  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-
-        <div class="modal-body">
-          <p>Model body text</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Model Title</h4>
-          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span
-              aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-          <form [formGroup]="formValue">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Title</label>
-              <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
-                aria-describedby="text" placeholder="Blog Title">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Description</label>
-              <input type="text" formControlName="description" class="form-control" id="exampleInputEmail1"
-                aria-describedby="text" placeholder="Blog Description">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Author</label>
-              <input type="text" formControlName="imageUrl" class="form-control" id="exampleInputEmail1"
-                aria-describedby="text" placeholder="Author">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" (click)="onCloseHandled()">Close</button>
-              <button type="button" class="btn btn-primary" (click)="postNewsData()">Save changes</button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <app-users></app-users>
-    </div>
-    <div class="col-md-8">
-      <app-news></app-news>
-    </div>
-  </div>
-
-</div> -->
 <app-footer></app-footer>

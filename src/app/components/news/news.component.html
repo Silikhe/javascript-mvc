@@ -3,8 +3,7 @@
   <div class="content col-sm-12 col-sm-offset-1 mb-3 " *ngFor="let post of news; index as i">
     <div class="image">
       <span>NEW</span>
-      <!-- <i class="fa fa-user  "></i>
-      <i class="fas fa-address-book"></i> -->
+
       <img src="{{post.url}}" alt="" />
     </div>
     <div class="desc">
@@ -16,10 +15,9 @@
       <p *ngIf="isShown"> <a (click)="toggleShow()">Read more</a></p>
       <i class="fa fa-book"></i>
 
-      <!-- <img src="{{post.url}}" alt=""> -->
       <div class="my-2">
         <!-- <small> -->
-        <a href="#" class="text-primary">#{{post.url}}</a>
+        <a href="#" class="text-primary">#{{post.imageUrl}}</a>
         <!-- </small> -->
       </div>
       <div class="share">

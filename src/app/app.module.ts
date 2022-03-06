@@ -11,19 +11,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsComponent } from './components/news/news.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { MatDialogModule } from '@angular/material/dialog';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FormComponent } from './components/form/form.component';
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavComponent, NewsComponent, FooterComponent],
+  declarations: [AppComponent, UsersComponent, NavComponent, NewsComponent, FooterComponent, FormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatDialogModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     NgbModule,
+
+    MatDialogModule,
+    MatCardModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
