@@ -3,18 +3,20 @@
   <div class="content col-sm-12 col-sm-offset-1 mb-3 " *ngFor="let post of news">
     <div class="image">
       <span>NEW</span>
+      <!-- <i class="fa fa-user  "></i>
+      <i class="fas fa-address-book"></i> -->
       <img src="{{post.url}}" alt="" />
     </div>
     <div class="desc">
       <span class="type">
-        <i class="fa fa-file-text"></i>
-      </span>
+        <i class="fa fa-archive"></i>            </span>
 
       <h1>{{post.name}}</h1>
       <p class="text-truncate-container">{{post.description}}</p>
       <p *ngIf="isShown"> <a (click)="toggleShow()">Read more</a></p>
+      <i class="fa fa-book"></i>
 
-      <img src="{{post.url}}" alt="">
+      <!-- <img src="{{post.url}}" alt=""> -->
       <div class="my-2">
         <!-- <small> -->
         <a href="#" class="text-primary">#election</a>
@@ -24,7 +26,7 @@
         <ul>
           <li>
             <a href="#">
-              <i class="fa fa-share-square-o"></i> 569 Shares
+              <i class="fa fa-book"></i> 569 Shares
             </a>
           </li>
           <li>

@@ -9,51 +9,32 @@
       <h2>What's Hot</h2>
       <ul *ngFor="let post of news">
         <li>
-          <a href="#">
-            <img src="{{post.url}}" alt="" />
-            <h3>{{post.name}}</h3>
-            <span><small>Read More</small> </span>
-          </a>
+          <div class="row">
+            <div class="col-10">
+              <a href="#">
+                <h3>{{post.name}}</h3>
+              </a>
+            </div>
+            <div class="col-2">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              <!-- <i class="fa fa-user-circle-o" aria-hidden="true"></i> -->
+            </div>
+          </div>
         </li>
       </ul>
+      <img
+        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        alt="" />
     </div>
-    
+
     <div class="content">
       <div class="image">
         <span>NEW</span>
         <img src="http://lorempixel.com/615/300/city/9/" alt="" />
       </div>
-      <!-- <div class="desc">
-        <span class="type">
-          <i class="fa fa-file-text"></i>
-        </span>
-        
-        <h1>What is Lorem Ipsum?</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe eveniet hic eaque neque explicabo architecto rerum porro cupiditate dignissimos ratione doloribus veritatis maiores sed consequuntur totam nostrum inventore ex fugit... <a href="#">Read more</a></p>
-        
-        <div class="share">
-          <ul>
-            <li>
-              <a href="#">
-                <i class="fa fa-share-square-o"></i> 569 Shares
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-eye"></i> 3,152 Views
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-comment"></i> 21 Comments
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div> -->
     </div>
   </div>
-  
+
   <div class="sidebar-module">
     <h4>Elsewhere</h4>
     <ol class="list-unstyled">
